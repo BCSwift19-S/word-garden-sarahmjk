@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guessLetterButton.isEnabled = false
+        playAgainButton.isHidden = true
 
     }
     
@@ -30,7 +32,17 @@ class ViewController: UIViewController {
     @IBAction func pressedLetterFieldChanged(_ sender: UITextField) {
         print("Hey! The guessedLetterFieldChanged!!! ")
     }
-    
+    @IBAction func guessedLetterFieldChange (_ sender: UITextField) {
+        if let letterGuessed = guessedLetterField.text?.last {
+            guessedLetterField.text = "\(letterGuessed)"
+             guessedLetterField.isEnabled = true
+            
+        }else{
+//            disable the button if I dont have a single character in the guessedLetterField
+        guessLetterButton.isEnabled = false
+       
+        }
+    }
     @IBAction func doneKeyPressed(_ sender: UITextField) {
         updateUIAAfterGuess()
     }
