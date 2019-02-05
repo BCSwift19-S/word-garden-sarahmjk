@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         let currentLetterGuessed = guessedLetterField.text!
         if !wordToGuess.contains (currentLetterGuessed) {
             wrongGuessesRemaining = wrongGuessesRemaining - 1
-            flowerImageView.image = UIImage (named: "flower \(wrongGuessesRemaining)")
+            flowerImageView.image = UIImage(named: "flower\(wrongGuessesRemaining)")
         }
 
         
